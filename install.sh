@@ -28,7 +28,10 @@ ln -s ~/dotfiles/vim ~/.vim
 # git submodule add https://github.com/manasthakur/foo.git pack/plugins/start/foo
 #
 
+#
+# Update all git submodules
+git submodule update --init --recursive
+
 # Compile YouCompleteMe with C/C++ support
 cd ~/.vim/pack/plugins/start/YouCompleteMe
-git submodule update --init --recursive
 ./install.py --clang-completer
