@@ -24,10 +24,7 @@ SAVEHIST=1000
 #------------------------------
 # Variables
 #------------------------------
-export BROWSER="chromium"
-export EDITOR="nvim"
-export PATH="${PATH}:${HOME}/bin:${HOME}/.cabal/bin"
-export GOPATH="$HOME/go"
+export EDITOR="vim"
 
 #-----------------------------
 # Dircolors
@@ -36,29 +33,18 @@ LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;3
 export LS_COLORS
 
 #------------------------------
-# Keybindings
-#------------------------------
-bindkey -v
-typeset -g -A key
-bindkey '^?' backward-delete-char
-bindkey '^[[5~' up-line-or-history
-bindkey '^[[3~' delete-char
-bindkey '^[[6~' down-line-or-history
-bindkey '^[[A' up-line-or-search
-bindkey '^[[D' backward-char
-bindkey '^[[B' down-line-or-search
-bindkey '^[[C' forward-char 
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-
-#------------------------------
 # Alias stuff
 #------------------------------
 alias ls="ls --color -F"
 alias ll="ls --color -lh"
-alias spm="sudo pacman"
-alias gr="gvim --remote-silent"
-alias vr="vim --remote-silent"
+alias t="tmux -2 new -A -s main"
+alias ta="tmux -2 attach -t"
+alias tnew="tmux -2 new -s"
+alias tls="tmux -2 ls"
+alias tkill="tmux kill-session -t"
+alias ev="vim ~/.vimrc"
+alias et="vim ~/.tmux.conf"
+alias ez="vim ~/.zshrc"
 
 #------------------------------
 # ShellFuncs
@@ -161,5 +147,9 @@ setprompt() {
 }
 setprompt
 
-
-# vim: set ts=2 sw=2 et:
+#
+# Autostart TMUX
+# 
+if [ -z ${TMUX} ]; then
+    t;
+fi
