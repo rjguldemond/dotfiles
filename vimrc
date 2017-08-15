@@ -24,6 +24,14 @@ set vb t_vb=
 syntax on
 filetype plugin indent on
 
+" TAG JUMPING:
+" " Create the `tags` file (may need to install ctags first)
+command! MakeTags !ctags -R .
+" " NOW WE CAN:
+" " - Use ^] to jump to tag under cursor
+" " - Use g^] for ambiguous tags
+" " - Use ^t to jump back up the tag stack
+
 " set netrw defaults
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3

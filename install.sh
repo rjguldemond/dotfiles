@@ -4,13 +4,16 @@
 #
 # Install Ubuntu packages
 #
-sudo apt-get install tmux zsh vim git exuberant-ctags build-essential cmake python-dev python3-dev
+# sudo apt-get install tmux zsh vim git exuberant-ctags build-essential cmake python-dev python3-dev
 
 # Make symlinks
 ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/zshrc ~/.zshrc
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/vim ~/.vim
+
+# Config git
+git config credential.helper store
 
 #
 # Install vim themes
