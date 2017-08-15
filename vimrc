@@ -32,6 +32,9 @@ command! MakeTags !ctags -R .
 " " - Use g^] for ambiguous tags
 " " - Use ^t to jump back up the tag stack
 
+" TODO
+command! Todo noautocmd vimgrep /TODO\|FIXME/j ** | cw
+
 " set netrw defaults
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
